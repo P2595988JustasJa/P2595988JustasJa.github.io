@@ -1,0 +1,102 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet" />
+
+  <head>
+
+  <body>
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="graff.html">The Art</a>
+      <a href="banksy.html">The Artist</a>
+      <a href="somthn.html">The Influence</a>
+    </nav>
+
+    <h1 class="bbd2">ARTIST</h1>
+    <svg class="distort">
+      <filter id="distortionFilter">
+        <feTurbulence type="fractalNoise" baseFrequency="2.01 .01" numOctaves="5" seed="3" stitchTiles="noStitch" x="0%" y="0%" width="100%" height="100%" result="noise"></feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="B" x="0%" y="0%" width="100%" height="100%" filterUnits="userSpaceOnUse"></feDisplacementMap>
+      </filter>
+    </svg>
+
+    <h2>BANKSY</h2>
+
+    <div>
+      <img class="graff" src="media/BalloonGirl.png" src="media/BalloonGirl.jpg" alt="Love is in the air by Banksy" img>
+      <img class="graff2" src="media/BalloonGirlBin.png" src="media/BalloonGirlBin.jpg" alt="Love is in the bin by Banksy" img>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <a class="para3">
+        "We don't exactly know who this artist is. Banksy is a famous - but anonymous - British graffiti artist. He keeps his identity a secret.
+        Although a lot of his art is produced in public places, he usually only reveals it's his after it has appeared on his social media.
+        A lot of his art is done in a particular style which people can easily recognise. Although lots of people have tried to guess who he is, his identity has still not been revealed.
+        Banksy first got noticed for spray-painting trains and walls in his home city of Bristol during the early 1990s.
+        Street art and graffiti can be considered criminal damage, so in the beginning it's thought the artist stayed anonymous to keep out of trouble.
+        In the beginning his pieces were mainly in Bristol, but in the 2000s his artworks started appearing all over the UK and other parts of the world." - BBC News </a>
+      <a class="para3"> Banksy chose to use stencils to create his pieces, probably because it's a faster way to paint. He was influenced in his early days by a French graffiti artist called Blek le Rat.
+        Blek le Rat is considered to be the father of stencil graffiti and people sometimes confuse the work of the two artists.
+        "Banksy doesn't only do street art, he's produced drawings, paintings and installation pieces. He even created his own theme park called Dismaland." - BBC News </a>
+    </div>
+    <main id="shredy">
+      <div id="piece" @click="$refs.art.click()">
+        <div id="holder">
+          <div id="painting">
+            <div id="shredded">
+              <div class="shred"></div>
+              <div class="shred"></div>
+              <div class="shred"></div>
+              <div class="shred"></div>
+              <div class="shred"></div>
+              <div class="shred"></div>
+              <div class="shred"></div>
+              <div class="shred"></div>
+              <div class="shred"></div>
+              <div class="shred"></div>
+              <div class="shred"></div>
+            </div>
+            <div id="original"></div>
+          </div>
+        </div>
+        <div id="frame"></div>
+      </div>
+      <input ref="art" type="file" accept="image/*" @change="artSelected">
+    </main>
+
+
+    <div class="vidvid">
+      <iframe class="vid" width="720" height="460" src="https://www.youtube.com/embed/eXKE0nAMmg4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+
+
+
+    <h2 class="end"> SLAVA UKRAINI </h2>
+
+    <a href="somthn.html">
+      <div class="arrow">
+        <div class="arrow-top"></div>
+        <div class="arrow-bottom"></div>
+      </div>
+    </a>
+
+    <a href="graff.html">
+      <div class="arrow1">
+        <div class="arrow-top1"></div>
+        <div class="arrow-bottom1"></div>
+      </div>
+    </a>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-load-image/2.19.0/load-image.all.min.js"></script>
+    <script src="javascript.js"></script>
+  </body>

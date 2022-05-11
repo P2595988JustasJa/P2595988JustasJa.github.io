@@ -1,0 +1,774 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #f9f9f9;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.arrow {
+  cursor: pointer;
+  height: 60px;
+  right: 0px;
+  bottom: 1px;
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%);
+  transition: transform 0.1s;
+  width: 40px;
+}
+
+.arrow-top, .arrow-bottom {
+  background-color: #666;
+  height: 4px;
+  left: -5px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+
+.arrow-top:after, .arrow-bottom:after {
+  background-color: #fff;
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transition: all 0.15s;
+}
+
+.arrow-top {
+  transform: rotate(45deg);
+  transform-origin: bottom right;
+}
+
+.arrow-top:after {
+  left: 100%;
+  right: 0;
+  transition-delay: 0s;
+}
+
+.arrow-bottom {
+  transform: rotate(-45deg);
+  transform-origin: top right;
+}
+
+.arrow-bottom:after {
+  left: 0;
+  right: 100%;
+  transition-delay: 0.15s;
+}
+
+.arrow:hover .arrow-top:after {
+  left: 0;
+  transition-delay: 0.15s;
+}
+
+.arrow:hover .arrow-bottom:after {
+  right: 0;
+  transition-delay: 0s;
+}
+
+.arrow:active {
+  transform: translateX(-50%) translateY(-50%) scale(0.9);
+}
+
+.back {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.thx {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 15px;
+}
+
+.arrow1 {
+  cursor: pointer;
+  height: 60px;
+  LEFT: 5%;
+  position: absolute;
+  top: 92%;
+  transform: translateX(-50%) translateY(-50%);
+  transition: transform 0.1s;
+  width: 40px;
+}
+
+.arrow-top1, .arrow-bottom1 {
+  background-color: #666;
+  height: 4px;
+  left: -5px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+
+.arrow-top1:after, .arrow-bottom1:after {
+  background-color: #fff;
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transition: all 0.15s;
+}
+
+.arrow-top1 {
+  transform: rotate(-225deg);
+  transform-origin: bottom left;
+  top: 6%;
+  left: 60%;
+}
+
+.arrow-top1:after {
+  left: 100%;
+  right: 0;
+  transition-delay: 0s;
+}
+
+.arrow-bottom1 {
+  transform: rotate(225deg);
+  transform-origin: bottom left;
+  top: 99%;
+  left: 62%;
+}
+
+.arrow-bottom1:after {
+  left: 0;
+  right: 100%;
+  transition-delay: 0.15s;
+}
+
+.arrow1:hover .arrow-top1:after {
+  left: 0;
+  transition-delay: 0.15s;
+}
+
+.arrow1:hover .arrow-bottom1:after {
+  right: 0;
+  transition-delay: 0s;
+}
+
+.arrow1:active {
+  transform: translateX(-50%) translateY(-50%) scale(0.9);
+}
+
+.back {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.thx {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 150px;
+}
+.IG {
+  padding-bottom:: 50px;
+}
+/* the arrows are going to be at the same place, instead of being at the bottom of each page, because the length of each page will differ, making the arrows change position with each page, i think that would become annoying and I do not want them being "sticky" to the side as that looks weird.*/
+nav {
+  width: 100%;
+  position: fixed;
+  top: 50px;
+  text-align: center;
+  z-index: 15
+}
+
+nav a {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: grey;
+  margin: 28;
+  font-size: 30px;
+  letter-spacing: 7px;
+  position: relative;
+  display: inline-block;
+  z-index: 150;
+}
+
+nav a:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: #a9a9a9;
+  top: 47%;
+  animation: out 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+}
+
+nav a:hover:before {
+  animation: in 0.3s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+}
+
+/* really cool bezier curve*/
+@keyframes in {
+  0% {
+    width: 0;
+    left: 0;
+    right: auto;
+  }
+
+  100% {
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
+}
+
+@keyframes out {
+  0% {
+    width: 100%;
+    left: auto;
+    right: 0;
+  }
+
+  100% {
+    width: 0;
+    left: auto;
+    right: 0;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+ $i from 1 through 5 {
+  nav a:nth-child(#{
+ $i
+
+  }) {
+  animation:show .2s #{
+ $i*0.1+1
+}
+
+s ease 1 both;
+}
+}
+/* the slideshow */
+display: table;
+width: 100%;
+height: 100%;
+background-color: #171717;
+color: #000;
+line-height: 1.6;
+position: relative;
+font-family: 'Roboto', sans-serif;
+overflow: hidden;
+
+/* maybe move to java??*/
+.circle {
+  position: absolute;
+  top: 170px;
+  left: 145px;
+  z-index: 9;
+  background: #9c9c9c;
+  border-radius: 50%;
+  height: 270px;
+  width: 270px;
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1.10s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.content {
+  position: relative;
+  top: 80px;
+  width: 100%;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1.0s;
+  animation-duration: 1.0s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.5s;
+  z-index: 10
+}
+
+/* terrible on phones/smaller screens, do not know how to fix */
+.splatter {
+  position: absolute;
+  top: 76%;
+  left: 37%;
+  z-index: 6;
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-duration: .35s;
+  animation-duration: .35s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+
+.content {
+  position: ab
+}
+
+/* slideshow container */
+.slideshow-container {
+  position: relative;
+  top: 25%;
+  max-width: 1000px;
+  margin: auto;
+  border: 5px solid #000000;
+  border-radius: 6px 0px 0px 0px;
+}
+
+/* hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* next button to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+
+grid($grid-size) {
+  @return calc(100vw / 24 * #{
+ $grid-size
+  });
+}
+
+::selection {
+  background: #0e0e0e;
+  color: #f0f0f0;
+}
+
+h1, h2 {
+  filter: url(#distortionFilter);
+  color: #0e0e0e;
+  position: relative;
+  font-size: 890%;
+}
+
+h1 {
+  font-size: 1300%;
+}
+
+.bbd {
+  position: relative;
+  padding-top: 69%;
+}
+
+.bbd2 {
+  position: relative;
+  padding-top: 117%;
+}
+
+.bbd3 {
+  position: relative;
+  padding-top: 87%
+}
+
+.graffit {
+  position: relative;
+  padding-top: 147%;
+}
+
+::selection {
+  color: #f0f0f0;
+}
+
+svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: -9999px;
+  pointer-events: none;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  Color: grey;
+  font-size: 80px;
+}
+
+.end {
+  position: relative;
+   bottom: 10px;
+  padding: 25px;
+  text-align: center;
+}
+
+.instagram-media {
+  position: relative;
+}
+
+.column {
+  box-sizing: border-box;
+  float: left;
+  width: 50%;
+  padding-right: 130px;
+  padding-left: 130px;
+}
+
+.column2 {
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+.row:after {
+  box-sizing: border-box;
+  content: "";
+  display: table;
+  clear: both;
+}
+
+a {
+  font-size: 18px;
+}
+
+.para {
+  text-align: center;
+  padding-left: 220px;
+  padding-right: 220px;
+  padding-bottom: 20px;
+  color: grey;
+  position: relative;
+}
+
+.para2 {
+  text-align: center;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 50px;
+  color: grey;
+  position: relative;
+}
+
+.para3 {
+  text-align: center;
+  padding-left: 220px;
+  padding-right: 220px;
+  padding-bottom: 20px;
+  color: grey;
+  position: relative;
+}
+
+.para4 {
+  text-align: left;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 50px;
+  color: grey;
+  position: relative;
+}
+
+/* banksys shreder, the possibility to impliment your own picture in java */
+#shredy {
+  position: relative;
+  padding-top: 10%;
+}
+
+#piece {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  height: 50vh;
+  max-height: 820px;
+  position: absolute;
+  width: calc(50vh * 0.774);
+}
+
+#frame {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/141041/banksy-frame.png);
+  background-size: cover;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+#holder {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/141041/banksy-back.jpg);
+  background-size: cover;
+  height: calc(50vh * 0.69);
+  left: 18.9%;
+  position: absolute;
+  top: 15.4%;
+  width: calc(50vh * 0.774 * 0.617);
+}
+
+#painting {
+  height: 100%;
+  position: absolute;
+  transform: translateY(0%);
+  width: 100%;
+}
+
+#original, .shred {
+  background: url(https://cdn.sanity.io/images/dqllnil6/production/40ce798feab599eda42bcbdcacb440e31475876d-1128x1578.jpg?w=480&q=65&auto=format);
+  background-size: cover;
+}
+
+#original {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+#shredded {
+  bottom: 0;
+  display: grid;
+  grid-column-gap: 3px;
+  grid-template-columns: repeat(11, 1fr);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+#shredded .shred {
+  background-position: top center;
+}
+
+#shredded .shred:nth-child(1) {
+  background-position: 0% 0%;
+}
+
+#shredded .shred:nth-child(2) {
+  background-position: 10% 0%;
+}
+
+#shredded .shred:nth-child(3) {
+  background-position: 20% 0%;
+}
+
+#shredded .shred:nth-child(4) {
+  background-position: 30% 0%;
+}
+
+#shredded .shred:nth-child(5) {
+  background-position: 40% 0%;
+}
+
+#shredded .shred:nth-child(6) {
+  background-position: 50% 0%;
+}
+
+#shredded .shred:nth-child(7) {
+  background-position: 60% 0%;
+}
+
+#shredded .shred:nth-child(8) {
+  background-position: 70% 0%;
+}
+
+#shredded .shred:nth-child(9) {
+  background-position: 80% 0%;
+}
+
+#shredded .shred:nth-child(10) {
+  background-position: 90% 0%;
+}
+
+#shredded .shred:nth-child(11) {
+  background-position: 100% 0%;
+}
+
+/* this is so simple yet so cool */
+input {
+  display: none;
+}
+
+.graff {
+  border: 5px solid #000000;
+  border-radius: 6px 0px 0px 0px;
+  float: left;
+  margin: 120px
+}
+
+.graff2 {
+  border: 5px solid #000000;
+  border-radius: 6px 0px 0px 0px;
+  float: right;
+  margin: 120px;
+}
+
+.graff3 {
+  position: relative;
+  border: 5px solid #000000;
+  border-radius: 6px 0px 0px 0px;
+  float: left;
+  margin: 50px;
+}
+
+.graff4 {
+  position: relative;
+  border: 5px solid #000000;
+  border-radius: 6px 0px 0px 0px;
+  float: right;
+  margin: 50px;
+}
+
+.piece {
+  padding-top: 18%;
+  text-align: center;
+}
+
+.vid {
+  position: relative;
+  bottom: -55%;
+  border: 5px solid #000000;
+  border-radius: 6px 0px 0px 0px;
+}
+
+.vidvid {
+  padding: 300px;
+}

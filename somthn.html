@@ -1,0 +1,128 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <nav class="menu">
+    <a href="index.html">Home</a>
+    <a href="graff.html">The Art</a>
+    <a href="banksy.html">The Artist</a>
+    <a href="somthn.html">The Influence</a>
+  </nav>
+
+  <h1 class="bbd3">INFLUENCE</h1>
+  <svg class="distort">
+    <filter id="distortionFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="2.01 .01" numOctaves="5" seed="3" stitchTiles="noStitch" x="0%" y="0%" width="100%" height="100%" result="noise"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="B" x="0%" y="0%" width="100%" height="100%" filterUnits="userSpaceOnUse"></feDisplacementMap>
+    </filter>
+  </svg>
+
+
+  <a class="para"> "Graffiti, one of the most visible forms of crime and disorder in a community, can become a visible indicator of disobedience, social decline, and antisocial behavior among youth. As well as causing damage to the property targeted,
+    graffiti also plays a significant role in affecting entire communities.
+    It has been reported that communities that allow graffiti writers and street artists to decorate their shop shutters and buildings with their artwork report reduced crime rates, improved community relations, and community respect. It is possible
+    for graffiti art to be a force for good. Having graffiti around the neighborhood creates a sense of insecurity and fear of crime. Besides being expensive, destructive, and lowering property values, this practice shows a lack of concern for the
+    appearance of the neighborhood. In addition to telling stories, graffiti can also be used to depict moments where everything went wrong or well, to project views about people, politics, culture, art, and places in general, to express yourself
+    anonymously, or to create another artistic expression." Art Radar Journal </a>
+  <a class="para"> Since the invention of graffiti in 1970s in New York, it has spread all over the world, having an enormous cultural impact. Up untill now it has been considered as mostly a destructive tool, having a lot more negative impact
+    instead of positive. Thankfully, both the use of graffiti and the opinion of it has improved for the better. Nowadays graffiti is finally being recognised and used as being an art medium, instead of a tool for vandalism. </a>
+
+
+  <a href="index.html">
+    <div class="arrow">
+      <div class="arrow-top"></div>
+      <div class="arrow-bottom"></div>
+    </div>
+  </a>
+
+  <a href="banksy.html">
+    <div class="arrow1">
+      <div class="arrow-top1"></div>
+      <div class="arrow-bottom1"></div>
+    </div>
+  </a>
+  <!-- possibly delete this, unviable when using different display sizes -->!
+  <div class="circle">
+    <div class="content">
+      <p><a
+          href="https://www.thenatureofcities.com/2016/03/23/graffiti-and-street-art-can-be-controversial-but-can-also-be-a-medium-for-voices-of-social-change-protest-or-expressions-of-community-desire-what-how-and-where-are-examples-of-graffiti-as-a-posi/"
+          style="text-decoration:none">VOICE OF CHANGE</a></p>
+      <p><a href="https://www.artdictionmagazine.com/graffitis-influence-on-society/" style="text-decoration:none">INFLUENCE OF SOCIETY</a></p>
+      <p><a href="https://www.creativebloq.com/design/6-ways-street-art-influencing-design-51620596" style="text-decoration:none">CREATING NEW CULTURE</a></p>
+      <p><a href="https://www.widewalls.ch/magazine/writings-on-the-wall-waddington-custot" style="text-decoration:none">INFLUENCED PEOPLE</a></p>
+      <p><a href="https://www.blocal-travel.com/world/uk/bristol/bristol-street-art-guide/" style="text-decoration:none"> BRISTOL STREET ART GUIDE</a></p>
+      <p>P2595988</p>
+    </div>
+    <img class="splatter" src="media/PaintSplat1.07.png"
+     src="media/PaintSplat1.07.jpg" alt="Splat">
+  </div>
+
+
+
+  <div class="slideshow-container">
+
+    <!-- captions and img -->
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 4</div>
+      <img src="media/Vanda.png"
+        src="media/Vanda.jpg" alt="Vandalism" style="width:100%">
+      <div class="text">Vandalism</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 4</div>
+      <img src="media/Vandal.png"
+        src="media/Vanda1.jpg" alt="Vandalism" style="width:100%">
+      <div class="text">Vandalism, but cool</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 4</div>
+      <img src="media/PrimeCin.png"
+       src="media/PrimeCin.jpg" alt="Art" style="width:100%">
+      <div class="text">Art</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">4 / 4</div>
+      <img src="media/Optimist.png"
+       src="media/Optimist.jpg" alt="Art" style="width:100%">
+      <div class="text">The future of graffiti looks bright</div>
+    </div>
+
+
+    <!-- next/previous -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <!-- The dots -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+  </div>
+
+  <h2 class="end"> SLAVA UKRAINI </h2>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-load-image/2.19.0/load-image.all.min.js"></script>
+  <script src="javascript.js"></script>
+</body>
